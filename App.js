@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { StatusBar } from 'react-native';
 import { AppLoading, Font } from 'expo';
 import Routes from './screens/Routes';
 
@@ -16,11 +17,17 @@ class App extends Component {
   }
 
   render() {
-    if (!this.state.isFontLoaded) {
+    const { isFontLoaded } = this.state;
+    if (!isFontLoaded) {
       return <AppLoading />;
-    } else {
-      return <Routes />
     }
+
+    return (
+      <Fragment>
+        <StatusBar barStyle="light-content" />
+        <Routes />
+      </Fragment>
+    );
   }
 }
 
