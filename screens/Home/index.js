@@ -15,6 +15,6 @@ export default class Home extends Component {
       <ViewContainer>
         <Text>ColorBlinder - Home Screen!</Text>
       </ViewContainer>
-    )
+    );
   }
 }
